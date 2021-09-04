@@ -23,7 +23,6 @@ var findMedianSortedArrays = function (nums1, nums2) {
             }
         }
     }
-    console.log(result)
     if (result.length % 2 === 0) {
         midNumber = (result[result.length / 2] + result[result.length / 2 - 1]) / 2
     } else {
