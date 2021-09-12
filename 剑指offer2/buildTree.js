@@ -50,3 +50,4 @@ var buildTree = function (preorder, inorder) {
 };
 
 
+console.log(buildTree(["A","B","D","E","C","F","G"],["D","B","E","A","F","C",'G']))
