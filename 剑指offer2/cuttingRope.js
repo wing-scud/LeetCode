@@ -8,10 +8,10 @@ var cuttingRope = function (n) {
     }
     let max=1;
     while(n>4){
-         max*=3;
          n-=3;
+         max=max*3%1000000007;
     }
-    return max*n;
+    return max*n%1000000007;
 };
 //36
-console.log(cuttingRope(10))
+console.log(cuttingRope(120))
