@@ -37,17 +37,40 @@ var mirrorTree1 = function (root) {
 
  var mirrorTree = function (root) {
     if(!root) return root
+    function reverseNode(node){
+        let tempR = node.right;
+        node.right = node.left
+        node.left = tempR
+     }
     function deepTree(node){
         if(!node) return;
         reverseNode(node)
         deepTree(node.left)
         deepTree(node.right)
      }
+
      deepTree(root)
      return root;
 };
-function reverseNode(node){
-   let tempR = node.right;
-   node.right = node.left
-   node.left = tempR
-}
+
+
+
+var mirrorTree2 = function (root) {
+    if(!root) return root
+    let quene = [root];
+    let mirroTree;
+    while (quene.length > 0) {
+            mirroTree = mirroTree ? (mirroTree.next = quene.pop()) : quene.pop();
+            let tempR;
+            if (mirroTree.left) {
+                quene.push(mirroTree.left)
+            }
+            tempR = mirroTree.right;
+            mirroTree.right = mirroTree.left
+            if (tempR) {
+                quene.push(tempR)
+            }
+            mirroTree.left = tempR
+        }
+    return root
+};
